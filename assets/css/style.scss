@@ -1,0 +1,433 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap');
+/*--------------------------------------------------------------------
+Global
+---------------------------------------------------------------------*/
+$text-color: #282a39;
+$primary-color: #084298;
+$secondary-color: #595bcc;
+$border: 1px solid #d5d5d5;
+
+@mixin fonts($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin bg-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin transition {
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+    @include fonts(16px, 300, $text-color);
+    background: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+    margin: 0;
+}
+
+small {
+    font-size: 12px;
+}
+
+a,
+a:hover {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+i,
+svg {
+    display: inline-block;
+    pointer-events: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+iframe {
+    width: 100%;
+}
+
+figure {
+    position: relative;
+
+    img {
+        display: block;
+        width: 100%;
+        @include transition;
+    }
+}
+
+.btn {
+    font-family: 'Merriweather Sans', sans-serif;
+    @include transition;
+}
+
+.btn:focus,
+.navbar-toggler:focus,
+.form-control:focus,
+.form-select:focus,
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.card-title {
+    @include fonts(18px, 600, $text-color);
+    margin: 0;
+}
+
+.pagination {
+    .page-link {
+        color: $primary-color;
+        @include transition;
+    }
+
+    .page-link:hover,
+    .page-link.active {
+        color: #fff;
+        background: $primary-color;
+    }
+}
+
+.accordion-item {
+    border: $border;
+}
+
+.accordion-item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: $primary-color !important;
+    border: none;
+    background: transparent;
+}
+
+.accordion-button:not(.collapsed) {
+    background: transparent;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url(../css/chevron-down.svg);
+}
+
+.accordion-button::after {
+    background-image: url(../css/chevron-down.svg);
+}
+
+.accordion-body {
+    padding-top: 0;
+}
+
+.owl-carousel .owl-item img {
+    width: fit-content;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 20px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/*--------------------------------------------------------------------
+Preloader
+---------------------------------------------------------------------*/
+#preloader {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.loader-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    animation: loader 5s linear infinite;
+}
+
+.loader div {
+    height: 5vw;
+    max-height: 100%;
+    width: 2vw;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 0vw 10vw 0vw 10vw;
+    box-shadow: inset 0vw 0vw 0vw .1vw $primary-color, 0vw 0vw 1.5vw 0vw $secondary-color;
+    overflow: auto;
+    position: absolute;
+}
+
+.loader .one {
+    transform: rotate(45deg);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 7.5vw;
+    animation: animate 1s ease infinite;
+}
+
+.loader .two {
+    transform: rotate(90deg);
+    left: 5.5vw;
+    right: 0;
+    top: 0;
+    bottom: 5.5vw;
+    animation: animate 1s .125s ease infinite;
+}
+
+.loader .three {
+    transform: rotate(135deg);
+    left: 7.5vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    animation: animate 1s .25s ease infinite;
+}
+
+.loader .four {
+    transform: rotate(180deg);
+    left: 5.5vw;
+    right: 0;
+    top: 5.5vw;
+    bottom: 0;
+    animation: animate 1s .375s ease infinite;
+}
+
+.loader .five {
+    transform: rotate(225deg);
+    left: 0;
+    right: 0;
+    top: 7.5vw;
+    bottom: 0;
+    animation: animate 1s .5s ease infinite;
+}
+
+.loader .six {
+    transform: rotate(270deg);
+    left: 0;
+    right: 5.5vw;
+    top: 5.5vw;
+    bottom: 0;
+    animation: animate 1s .625s ease infinite;
+}
+
+.loader .seven {
+    transform: rotate(315deg);
+    left: 0;
+    right: 7.5vw;
+    top: 0;
+    bottom: 0;
+    animation: animate 1s .750s ease infinite;
+}
+
+.loader .eight {
+    transform: rotate(360deg);
+    left: 0;
+    right: 5.5vw;
+    top: 0;
+    bottom: 5.5vw;
+    animation: animate 1s .875s ease infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes animate {
+    50% {
+        box-shadow: inset 0vw 0vw 0vw .1vw $primary-color, 0vw 0vw 1.5vw 0vw $primary-color;
+    }
+}
+
+/*--------------------------------------------------------------------
+Main
+---------------------------------------------------------------------*/
+.quizApp {
+    margin: 50px 0;
+}
+
+.quiz {
+    padding: 20px 30px 50px;
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+
+    .quiz-container {
+        border: $border;
+        background-color: #fff;
+        position: relative;
+    }
+
+    .progress {
+        border-radius: 0;
+        height: 10px;
+    }
+
+    .progress-bar {
+        width: 1%;
+        background-color: $secondary-color;
+        @include transition();
+    }
+
+    .quiz-wrapper {
+        padding: 16px;
+    }
+
+    .question-count {
+        display: block;
+        text-align: right;
+    }
+
+    h1 {
+        text-align: center;
+        @include fonts(30px, 600, $primary-color);
+        margin-bottom: 16px;
+    }
+
+    p {
+        text-align: center;
+        @include fonts(18px, 300, $text-color);
+        margin-bottom: 30px;
+    }
+
+    .quiz-choices {
+        margin: 0 auto 30px;
+        width: 60%;
+    }
+
+    .buttons {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    .btn-primary {
+        min-width: 100px;
+        border: 1px solid $primary-color;
+        background: $primary-color;
+    }
+
+    .btn-primary:hover {
+        border: 1px solid #0a54c3;
+        background: #0a54c3;
+    }
+
+    #restart-button {
+        display: none;
+    }
+}
+
+.quiz::after {
+    content: '';
+    border-radius: 5px;
+    background-color: $secondary-color;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (max-width: 767.98px) {
+    .quiz {
+        padding: 20px 20px 50px;
+
+        h1 {
+            font-size: 20px;
+        }
+
+        .quiz-choices {
+            width: 100%;
+        }
+    }
+}

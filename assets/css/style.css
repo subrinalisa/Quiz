@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap");
+/*--------------------------------------------------------------------
+Global
+---------------------------------------------------------------------*/
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #282a39;
+  background: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+small {
+  font-size: 12px;
+}
+
+a,
+a:hover {
+  color: #084298;
+  text-decoration: none;
+}
+
+i,
+svg {
+  display: inline-block;
+  pointer-events: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+iframe {
+  width: 100%;
+}
+
+figure {
+  position: relative;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  font-family: 'Merriweather Sans', sans-serif;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn:focus,
+.navbar-toggler:focus,
+.form-control:focus,
+.form-select:focus,
+.accordion-button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #282a39;
+  margin: 0;
+}
+
+.pagination .page-link {
+  color: #084298;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover,
+.pagination .page-link.active {
+  color: #fff;
+  background: #084298;
+}
+
+.accordion-item {
+  border: 1px solid #d5d5d5;
+}
+
+.accordion-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: #084298 !important;
+  border: none;
+  background: transparent;
+}
+
+.accordion-button:not(.collapsed) {
+  background: transparent;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../css/chevron-down.svg);
+}
+
+.accordion-button::after {
+  background-image: url(../css/chevron-down.svg);
+}
+
+.accordion-body {
+  padding-top: 0;
+}
+
+.owl-carousel .owl-item img {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 20px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/*--------------------------------------------------------------------
+Preloader
+---------------------------------------------------------------------*/
+#preloader {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.loader-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loader {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  -webkit-animation: loader 5s linear infinite;
+          animation: loader 5s linear infinite;
+}
+
+.loader div {
+  height: 5vw;
+  max-height: 100%;
+  width: 2vw;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 0vw 10vw 0vw 10vw;
+  -webkit-box-shadow: inset 0vw 0vw 0vw 0.1vw #084298, 0vw 0vw 1.5vw 0vw #595bcc;
+          box-shadow: inset 0vw 0vw 0vw 0.1vw #084298, 0vw 0vw 1.5vw 0vw #595bcc;
+  overflow: auto;
+  position: absolute;
+}
+
+.loader .one {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 7.5vw;
+  -webkit-animation: animate 1s ease infinite;
+          animation: animate 1s ease infinite;
+}
+
+.loader .two {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  left: 5.5vw;
+  right: 0;
+  top: 0;
+  bottom: 5.5vw;
+  -webkit-animation: animate 1s .125s ease infinite;
+          animation: animate 1s .125s ease infinite;
+}
+
+.loader .three {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  left: 7.5vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-animation: animate 1s .25s ease infinite;
+          animation: animate 1s .25s ease infinite;
+}
+
+.loader .four {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: 5.5vw;
+  right: 0;
+  top: 5.5vw;
+  bottom: 0;
+  -webkit-animation: animate 1s .375s ease infinite;
+          animation: animate 1s .375s ease infinite;
+}
+
+.loader .five {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  left: 0;
+  right: 0;
+  top: 7.5vw;
+  bottom: 0;
+  -webkit-animation: animate 1s .5s ease infinite;
+          animation: animate 1s .5s ease infinite;
+}
+
+.loader .six {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  left: 0;
+  right: 5.5vw;
+  top: 5.5vw;
+  bottom: 0;
+  -webkit-animation: animate 1s .625s ease infinite;
+          animation: animate 1s .625s ease infinite;
+}
+
+.loader .seven {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+  left: 0;
+  right: 7.5vw;
+  top: 0;
+  bottom: 0;
+  -webkit-animation: animate 1s .750s ease infinite;
+          animation: animate 1s .750s ease infinite;
+}
+
+.loader .eight {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  left: 0;
+  right: 5.5vw;
+  top: 0;
+  bottom: 5.5vw;
+  -webkit-animation: animate 1s .875s ease infinite;
+          animation: animate 1s .875s ease infinite;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes animate {
+  50% {
+    -webkit-box-shadow: inset 0vw 0vw 0vw 0.1vw #084298, 0vw 0vw 1.5vw 0vw #084298;
+            box-shadow: inset 0vw 0vw 0vw 0.1vw #084298, 0vw 0vw 1.5vw 0vw #084298;
+  }
+}
+
+@keyframes animate {
+  50% {
+    -webkit-box-shadow: inset 0vw 0vw 0vw 0.1vw #084298, 0vw 0vw 1.5vw 0vw #084298;
+            box-shadow: inset 0vw 0vw 0vw 0.1vw #084298, 0vw 0vw 1.5vw 0vw #084298;
+  }
+}
+
+/*--------------------------------------------------------------------
+Main
+---------------------------------------------------------------------*/
+.quizApp {
+  margin: 50px 0;
+}
+
+.quiz {
+  padding: 20px 30px 50px;
+  position: relative;
+  z-index: 1;
+  margin-top: 30px;
+}
+
+.quiz .quiz-container {
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+  position: relative;
+}
+
+.quiz .progress {
+  border-radius: 0;
+  height: 10px;
+}
+
+.quiz .progress-bar {
+  width: 1%;
+  background-color: #595bcc;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.quiz .quiz-wrapper {
+  padding: 16px;
+}
+
+.quiz .question-count {
+  display: block;
+  text-align: right;
+}
+
+.quiz h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #084298;
+  margin-bottom: 16px;
+}
+
+.quiz p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  color: #282a39;
+  margin-bottom: 30px;
+}
+
+.quiz .quiz-choices {
+  margin: 0 auto 30px;
+  width: 60%;
+}
+
+.quiz .buttons {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+}
+
+.quiz .btn-primary {
+  min-width: 100px;
+  border: 1px solid #084298;
+  background: #084298;
+}
+
+.quiz .btn-primary:hover {
+  border: 1px solid #0a54c3;
+  background: #0a54c3;
+}
+
+.quiz #restart-button {
+  display: none;
+}
+
+.quiz::after {
+  content: '';
+  border-radius: 5px;
+  background-color: #595bcc;
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (max-width: 767.98px) {
+  .quiz {
+    padding: 20px 20px 50px;
+  }
+  .quiz h1 {
+    font-size: 20px;
+  }
+  .quiz .quiz-choices {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

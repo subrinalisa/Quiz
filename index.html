@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quiz App">
+    <meta name="author" content="Subrina Lisa">
+    <!-- Title -->
+    <title>Quiz</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="assets/icon-fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/icon-bootstrap/bootstrap-icons.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- ========= Preloader ========= -->
+    <div id="preloader">
+        <div class="loader-wrap">
+            <div class="loader">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+                <div class="six"></div>
+                <div class="seven"></div>
+                <div class="eight"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ========= Main ========= -->
+    <section class="quizApp">
+        <div class="container">
+            <h1 class="text-center">Quiz App</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="quiz">
+                        <div class="quiz-container">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar">
+                                </div>
+                            </div>
+                            <div class="quiz-wrapper">
+                                <span class="question-count"></span>
+                                <h1>Which one is Css Framework?</h1>
+                                <p>Pick an option below!</p>
+                                <div class="row quiz-choices">
+                                    <!-- <div class="col-md-6 mb-2 text-center">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="option"
+                                                data-order="0">Default radio
+                                        </label>
+                                    </div>
+                                </div>
+                                -->
+                                </div>
+                                <div class="buttons text-center">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <button type="button" class="btn btn-primary"
+                                                id="previous-button">Previous</button>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <button type="button" class="btn btn-primary" id="next-button">Next</button>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <button type="button" class="btn btn-primary"
+                                                id="restart-button">Restart</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========= Js Files ========= -->
+    <!-- Jquery Js -->
+    <script src="assets/js/jquery-1.12.4.js"></script>
+    <!-- Popper Js -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/custom.js"></script>
+    <!-- App Js -->
+    <script src="assets/js/app.js" type="module"></script>
+</body>
+
+</html>
