@@ -29,7 +29,7 @@ $border: 1px solid #d5d5d5;
 body {
     font-family: 'Merriweather Sans', sans-serif;
     @include fonts(16px, 300, $text-color);
-    background: #fff;
+    background: rgba(13, 110, 253, 0.05);
 }
 
 ::-webkit-scrollbar {
@@ -348,6 +348,7 @@ Main
     .progress {
         border-radius: 0;
         height: 10px;
+        background: rgba(13,110,253,.25);
     }
 
     .progress-bar {
