@@ -360,11 +360,6 @@ Main
         padding: 16px;
     }
 
-    .question-count {
-        display: block;
-        text-align: right;
-    }
-
     h1 {
         text-align: center;
         @include fonts(30px, 600, $primary-color);

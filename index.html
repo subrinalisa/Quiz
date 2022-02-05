@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,7 +18,6 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
     <!-- ========= Preloader ========= -->
     <div id="preloader">
@@ -49,8 +47,15 @@
                                 </div>
                             </div>
                             <div class="quiz-wrapper">
-                                <span class="question-count"></span>
-                                <h1>Which one is Css Framework?</h1>
+                                <div class="d-flex justify-content-between">
+                                    <div class="align-self-center">
+                                        <p>Time: <span class="time-out"></span></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <p class="question-count"></p>
+                                    </div>
+                                </div>
+                                <h1></h1>
                                 <p>Pick an option below!</p>
                                 <div class="row quiz-choices">
                                     <!-- Dynamically rendered -->
@@ -89,5 +94,4 @@
     <!-- App Js -->
     <script src="assets/js/app.js" type="module"></script>
 </body>
-
 </html>

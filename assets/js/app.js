@@ -8,7 +8,6 @@ const quesArray = [
     new Question(`In strict mode 'this' refers to`, ['Owner object', 'Global object', 'Element', 'Undefined'], 3)
 ];
 const myQuiz = new Quiz(quesArray);
-
 // Dom Elements
 const quizQuestion = document.querySelector('.quiz-wrapper h1');
 const quizChoices = document.querySelector('.quiz-choices');
@@ -18,6 +17,15 @@ const progressBar = document.querySelector('.progress-bar');
 const nextBtn = document.querySelector('#next-button');
 const prevBtn = document.querySelector('#previous-button');
 const restartBtn = document.querySelector('#restart-button');
+const timerElement = document.querySelector('.time-out');
+let targetTime = 15 * 60;
+
+setInterval((e) => {
+    const minute = Math.floor(targetTime / 60);
+    const seconds = targetTime % 60;
+    timerElement.innerText = `${minute}:${seconds}`;
+    targetTime--;
+}, 1000);
 
 function renderQuestion() {
     if (myQuiz.quizEnd()) {
@@ -64,7 +72,6 @@ function setElement(element, value) {
 function displayElement(element, value) {
     element.style.display = value;
 }
-
 // Next Button
 nextBtn.addEventListener('click', function (e) {
     const selectedOption = document.querySelector('input[type="radio"]:checked');
@@ -77,14 +84,12 @@ nextBtn.addEventListener('click', function (e) {
         alert('Please select an option');
     }
 });
-
 // Previous Button
 prevBtn.addEventListener('click', function (e) {
     myQuiz.prevIndex();
     renderQuestion();
     progressStatus();
 });
-
 // Restart Button
 restartBtn.addEventListener('click', function (e) {
     myQuiz.reset();
@@ -96,6 +101,5 @@ restartBtn.addEventListener('click', function (e) {
     displayElement(quizChoices, 'flex');
     setElement(quizScore, `Pick an option below!`);
 });
-
 // Function invoke
 renderQuestion();
